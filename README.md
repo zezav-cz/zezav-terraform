@@ -1,6 +1,6 @@
 # Zezav Cloud Infrastructure - Provisioning
 
-![CI Pipeline](https://github.com/zezavcloud/terraform/actions/workflows/checks.yml/badge.svg)
+![CI Pipeline](https://github.com/zezav-cz/zezav-terraform/actions/workflows/checks.yml/badge.svg)
 
 ## Introduction
 
