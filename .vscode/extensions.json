@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "hashicorp.hcl",
+    "rgeraskin.mise",
+    "jkillian.custom-local-formatters"
+  ]
+}

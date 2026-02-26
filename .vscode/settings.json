@@ -1,0 +1,13 @@
+{
+  "customLocalFormatters.formatters": [
+    {
+      "command": "mise exec -- tofu fmt ${file} >/dev/null && cat ${file}",
+      "languages": ["hcl"],
+      "notes": "Formats Terraform files using tofu fmt"
+    }
+  ],
+  "[hcl]": {
+    "editor.defaultFormatter": "jkillian.custom-local-formatters",
+    "editor.formatOnSave": false
+  }
+}

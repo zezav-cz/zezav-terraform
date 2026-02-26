@@ -1,0 +1,6 @@
+# Terraform/OpenTofu
+src/.terraform/
+src/*.tfstate
+src/*.tfstate.*
+
+.env

@@ -1,0 +1,45 @@
+[tools]
+lefthook = "2"
+opentofu = "1.11"
+dagger = "0.19"
+go = "1.22"
+"go:github.com/editorconfig-checker/editorconfig-checker/v3/cmd/editorconfig-checker" = "3.6"
+
+[env]
+_.file = ".env"
+
+[tasks.init]
+description = "Initialize OpenTofu"
+dir = "src"
+run = "tofu init"
+sources = ["*.tf", "*.tfvars"]
+outputs = [".terraform"]
+
+[tasks.plan]
+description = "Generates execution plan"
+dir = "src"
+depends = ["init"]
+run = "tofu plan"
+sources = ["*.tf", "*.tfvars"]
+
+[tasks.apply]
+description = "Applies the changes based on the saved plan"
+dir = "src"
+depends = ["init"]
+run = "tofu apply"
+sources = ["*.tf", "*.tfvars"]
+
+[tasks.fmt]
+description = "Format terraform files"
+dir = "src"
+run = "tofu fmt -recursive ."
+sources = ["*.tf", "*.tfvars"]
+
+[tasks.lint]
+description = "Lint terraform files and check editorconfig"
+run = [
+  "tofu fmt -check -recursive -diff src/",
+  "editorconfig-checker"
+]
+sources = ["*.tf", "*.tfvars", ".editorconfig"]
+

@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    fmt:
+      glob: "*.tf"
+      run: mise exec -- tofu fmt -check  --recursive {staged_files}
+    editorconfig:
+      glob: "*"
+      run: mise exec -- editorconfig-checker {staged_files}
