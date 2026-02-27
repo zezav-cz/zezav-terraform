@@ -7,7 +7,7 @@ resource "hcloud_zone" "zezav_cz" {
 
 
 resource "hcloud_zone_rrset" "zezav_cz_a_records" {
-  for_each = toset(["@", "www", "pub", "dir", "blog"])
+  for_each = toset(["@", "www", "dir", "blog"])
   zone     = hcloud_zone.zezav_cz.name
   name     = each.key
   type     = "A"
